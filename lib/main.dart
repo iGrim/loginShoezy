@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled2/Animation/FadeAnimation.dart';
 
 void main() => runApp(
   MaterialApp(
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         child: Column(
           children: <Widget>[
-            Container(
+            FadeAnimation(1, Container(
               height: 350,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -25,34 +26,34 @@ class HomePage extends StatelessWidget {
               ),
               child: Stack(
                 children: <Widget>[
-                  Positioned(
+                Positioned(
                     left: -10,
                     width: 400,
                     height: 500,
-                    child: Container(
+                    child: FadeAnimation(2, Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/person.png')
                         )
                       ),
-                    ),
+                    )),
                   ),
-                  Positioned(
+              Positioned(
                     right: 20,
                     width: 100,
                     height: 250,
-                    child: Container(
+                    child: FadeAnimation(3, Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage('assets/images/lines.png')
                           )
                       ),
-                    ),
+                    )),
                   ),
 
                 ],
               ),
-            ),
+            )),
             Padding(
                 padding: EdgeInsets.all(30.0),
                 child: Column(
